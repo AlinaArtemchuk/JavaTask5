@@ -33,50 +33,62 @@ public class Animals {
     }
 
 };
-class Fox extends Animals {
-    private static int age;
-    public Fox (int age) {
-this.age = age;    }
 
-    public int getAge() {
-        return age;
+abstract class Mammals {
+    private String type;
+
+    public Mammals (String name) {
+        this.type= type;
     }
-
-    public Fox (String name, String color, int age) {
-super (name, color);
-        }
-public abstract class WildAnimals extends Animals{
-abstract void say();
-};
+    abstract void say();
 }
 
-class Cat extends Animals {
-    private String owner;
 
+class Cow extends Mammals {
+    private static String name;
+   public String getName() {
+    return name;}
+    private static int age;
+    public int getAge() {
+        return age;
+
+    }
+
+    public Cow(String type, String name, int age) {
+        super(type);
+}
+@Override
+void say() {
+    System.out.println("Moo");
+        }
+
+        }
+
+class Sheep extends Mammals {
+    private static String name;
+    public String getName() {
+        return name;}
+    private String owner;
     public String getOwner() {
         return owner;
     }
 
-    public Cat(String name, String color, String owner) {
-        super(name, color);
-        this.owner = owner;
-
+    public Sheep (String name, String type, String owner) {
+        super(type);
     }
+    @Override
+    void say() {
+        System.out.println("Baa");}
 
-    final void SayOwner() {
+    final void sayOwner() {
         System.out.println("My owner`s name is " + owner);
     }
 
-    public abstract class HomeAnimals extends Animals {
-        abstract void say();
-
-    }
     public static void main(String[] args) {
-Fox Rex = new Fox ("Lori",  "grey",2 );
-Cat Tom = new Cat("Tom","black", "Mike");
-Cat Alexa = new Cat ("Alexa", "ny-gold","Alina");
-Tom.SayOwner();
-Alexa.SayOwner();
-Rex.sayHello();
-    }
-}
+        Cow Alise = new Cow ("cow", "Aise", 7);
+        Alise.say();
+        Sheep Jon = new Sheep("Jon", "sheep", "Alex");
+        Jon.say();
+        Sheep Olli = new Sheep ("Olli", "sheep", "Tom");
+        Olli.sayOwner();
+    }}

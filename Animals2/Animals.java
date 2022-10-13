@@ -1,3 +1,5 @@
+import org.w3c.dom.css.Counter;
+
 public class Animals {
     private static String name;
     private static String color;
@@ -6,8 +8,6 @@ public class Animals {
         this.color = color;
     }
 
-    public Animals() {
-    }
 
     public String getColor() {
         return color;
@@ -21,18 +21,92 @@ public class Animals {
     public void setName (String name) {
         this.name = name;
     }
-    public void sayHello (){
-        System.out.println("Hello, my name is "+ name +". " + "My color is " + color+".");
-    }
-    public static void main(String[] args) {
-        Animals Snizhok = new Animals("Snizhok", "white");
-        Snizhok.sayHello();
 
-        Animals Barsyk = new Animals("Barsyk", "red");
-        Barsyk.sayHello();
+        private static int count = 0;
+    public Animals() {
+
+            new Counter(). setCount();
+        }
+        public static int getCount() {
+            return count;
+        }
+        private static class Counter {
+            private void setCount() {
+                count = count+1;
+            }
+     }
+
+public class Home {
+    String country;
+    String region;
+
+    public Home(String country, String region) {
+        this.country = country;
+        this.region = region;
     }
 
-};
+    public Home() {
+
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getRegion() {
+        return region;
+
+    }
+
+    public class Owner {
+        String OwName;
+
+        public Owner(String OwName) {
+            this.OwName = OwName;
+        }
+
+        public Owner() {
+
+        }
+
+        public String getOwName() {
+            return OwName;
+        }
+
+        public void Say() {
+            System.out.println("Name - " + name + ", color - " + color + ", home - " + country + ", " + region + ", owner - " + OwName + ".");
+        }
+
+
+    public enum EnumName{
+        Sup, Tom, Rex;
+    }
+public class AnimalsName{
+            public static void main(String[] args){
+                EnumName name = EnumName.Sup;
+                String nameOfName = name.name();
+                System.out.println(nameOfName);
+            }
+
+}
+
+
+        public void main(String[] args) {
+            Animals.Home.Owner Sup = new Animals("Sup", "white").new Home("UA", "Polissya").new Owner("Katya");
+            Sup.Say();
+            Animals.Home.Owner Tom = new Animals("Tom", "red").new Home("PL", "Podillya").new Owner("Oleh");
+            Tom.Say();
+            Animals.Home.Owner Rex = new Animals("Rex", "black").new Home("UK", "Wales").new Owner("Danny");
+            Rex.Say();
+            System.out.println("Counts of Animals - " +Animals.getCount());
+        }
+
+    }
+
+}
+}
+
+
 
 abstract class Mammals {
     private String type;
@@ -89,6 +163,6 @@ class Sheep extends Mammals {
         Alise.say();
         Sheep Jon = new Sheep("Jon", "sheep", "Alex");
         Jon.say();
-        Sheep Olli = new Sheep ("Olli", "sheep", "Tom");
+        Sheep Olli = new Sheep ("Olli", "sheep", "Tommy");
         Olli.sayOwner();
     }}

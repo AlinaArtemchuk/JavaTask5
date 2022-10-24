@@ -12,7 +12,7 @@ public class Animals {
                 Integer AnimalsNums2 = 2;
                 Integer AnimalsNums3 = 3;
             }}
-    public static void  main(String[] args){
+    public static <InvalidLineNumsException> void  main(String[] args){
                     ArrayList<String> AnimalsName = new ArrayList<String>();
                     AnimalsName.add("cat");
                     AnimalsName.add("dog");
@@ -26,10 +26,11 @@ public class Animals {
 
                     String AnimalsName3 = AnimalsName.get(2);
                     System.out.println("AnimalsName3 = " + AnimalsName3);
-                }
-
-
-
-    }
+                    try {
+                        String AnimalsName4 = AnimalsName.get(3);
+                    } catch (IndexOutOfBoundsException e) {
+                System.err.println("Wrong animal`s number");
+                    }
+    }}
 
 
